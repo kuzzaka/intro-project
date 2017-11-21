@@ -1,0 +1,29 @@
+{
+  "name": "intro-project",
+  "devDependencies": {
+    "backbone": "latest",
+    "grunt": "^1.0.1",
+    "grunt-contrib-uglify": "^3.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^2.0.0",
+    "jquery": "latest",
+    "lodash": "latest"
+  },
+  "description": "Учебный проект для освоения стэка",
+  "version": "1.0.0",
+  "main": "Gruntfile.js",
+  "dependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enflaer/intro-project-enflaer.git"
+  },
+  "author": "enflaer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enflaer/intro-project-enflaer/issues"
+  },
+  "homepage": "https://github.com/enflaer/intro-project-enflaer#readme"
+}
