@@ -1,13 +1,13 @@
 {
   "name": "intro-project",
-  "devDependencies": {
-    "backbone": "latest",
-    "jquery": "latest",
-    "lodash": "latest"
-  },
+  "devDependencies": {},
   "description": "Учебный проект для освоения стэка",
   "version": "1.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "backbone": "^1.3.3",
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.4"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
