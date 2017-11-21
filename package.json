@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "backbone": "latest",
+    "jquery": "latest",
+    "lodash": "latest"
+  }
+}
