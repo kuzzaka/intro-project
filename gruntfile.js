@@ -5,7 +5,7 @@ module.exports = function(grunt) {
         concat: {
             js: {
                 src: ['src/js/*.js'],
-                dest: 'js/scripts.js',
+                dest: 'build/js/scripts.js',
             },
         },
         watch: {
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    'css/styles.css': ['src/css/*.scss'],
+                    'build/css/styles.css': ['src/css/*.scss'],
                 },
             },
         },
