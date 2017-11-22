@@ -1,14 +1,3 @@
 .test {
   color: #3bbfce;
   margin: 16px; }
-
-.wrapper {
-  width: 100%;
-  position: relative; }
-
-.add-item {
-  position: absolute;
-  margin: 0 auto;
-  border-radius: 50%; }
-
-/*# sourceMappingURL=styles.css.map */
