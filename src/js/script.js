@@ -1,5 +1,5 @@
 $('.add-item').click(function(e) {
-  const popup = $('.window');
+  var popup = $('.window');
 
   if (popup.hasClass('hidden')) {
     popup.removeClass('hidden');
@@ -19,3 +19,18 @@ $('.modal__close').click(function(e) {
   $('.window').addClass('hidden');
   $(document).unbind('click.myEvent');
 });
+
+$('.js_submit_btn').click(function(e) {
+  var attrs = {
+    id: $('.js_attrs').val(),
+  };
+  console.log(attrs);
+  $('.window').addClass('hidden');
+  $(document).unbind('click.myEvent');
+});
+var attrs = {
+  id: $('.js_attrs').val(),
+};
+var item = new Item({id: attrs})
+item.save();
+console.log(item);
