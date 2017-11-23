@@ -8,28 +8,30 @@
 </head>
 
 <body>
-  <div class="wrapper">
-    <button class="add-item btn" type="button">
+  <div class="add-item__view">
+    <div class="wrapper">
+      <button class="add-item btn" type="button">
         + Добавить товар по артикулу
     </button>
-  </div>
-  <div class="window hidden">
-    <div class="modal">
-      <button class="modal__close modal__close_symbol" type="button">
+    </div>
+    <div class="window hidden">
+      <div class="modal">
+        <button class="modal__close modal__close_symbol" type="button">
         x
       </button>
-      <div class="modal__content">
-        <h2 class="modal__name">Добавление товара в корзину по артикулу</h2>
-        <p>Введите артикулы через пробел или с новой строки, например: 123456, 123456, 123456</p>
-        <textarea class="modal__comment" name="comment" wrap="soft"></textarea>
-        <p class="modal__note">Не более 1000 артикулов за раз</p>
-        <button class="btn btn_red" type="button">
+        <div class="modal__content">
+          <h2 class="modal__name">Добавление товара в корзину по артикулу</h2>
+          <p>Введите артикулы через пробел или с новой строки, например: 123456, 123456, 123456</p>
+          <textarea class="modal__comment js_attrs" name="comment" wrap="soft"></textarea>
+          <p class="modal__note">Не более 1000 артикулов за раз</p>
+          <button class="btn btn_red js_submit_btn" type="submit">
             Добавить
         </button>
+        </div>
       </div>
     </div>
   </div>
 </body>
-<script src="js/scripts.js"></script>
+<script src="js/full.js"></script>
 
 </html>
