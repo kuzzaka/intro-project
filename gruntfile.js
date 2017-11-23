@@ -8,14 +8,16 @@ module.exports = function(grunt) {
               'node_modules/jquery/dist/jquery.js',
               'node_modules/backbone/backbone.js',
               'src/js/*.js'],
-        dest: 'build/js/scripts.js',
+        dest: 'build/js/full.js',
       },
     },
     watch: {
       js: {
+        tasks: ['concat'],
         files: ['src/js/*.js'],
       },
       scss: {
+        tasks: ['concat'],
         files: ['src/css/*.scss'],
       },
     },
@@ -30,7 +32,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.registerTask('default', ['concat', 'sass', 'watch']);
+  grunt.loadNpmTasks('grunt-newer');
+  grunt.registerTask('default', ['newer:concat:js',
+  'newer:sass:dist',
+  'watch']);
 };
-
-//grunt newer
