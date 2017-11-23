@@ -6,27 +6,31 @@ var PopupView = Backbone.View.extend({
     'click .js_submit_btn': 'sendPopupAttrs',
     'click ': 'closePopupByNonWindowClick',
   },
-  openPopup: function() {
-    if (popup.hasClass('hidden')) {
-      popup.removeClass('hidden');
-    }
+  initialize: function() {
+    this.popup = this.$('.window');
   },
-  closePopupByNonWindowClick: function() {
-    var firstClick = true;
-    $(document).bind('click.myEvent', function(e) {
-      if (!firstClick && $(e.target).closest('.window').length === 0) {
-        closePopup();
+  openPopup: function(e) {
+    e.stopPropagation();
+    if (this.popup.hasClass('hidden')) {
+      this.popup.removeClass('hidden');
+    }
+
+    var self = this;
+    $(document).on('click', function(e) {
+      console.log(e);
+      if ($(e.target).closest('.window').length === 0) {
+        self.closePopup();
       }
-      firstClick = false;
     });
   },
   closePopup: function() {
-    closePopup();
+    $('.window').addClass('hidden');
+    $(document).off('click');
   },
   sendPopupAttrs: function() {
     var id = $('.js_attrs').val();
     this.model.set('id', id);
-    item.fetch();
-    closePopup();
+    this.model.fetch();
+    this.closePopup();
   },
 });
