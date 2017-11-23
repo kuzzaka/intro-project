@@ -4,8 +4,9 @@ var PopupView = Backbone.View.extend({
     'click .add-item': 'openPopup',
     'click .modal__close': 'closePopup',
     'click .js_submit_btn': 'sendPopupAttrs',
+    'click ': 'closePopupByNonWindowClick',
   },
-  initialize: function() {
+  initialize() {
       this.template = $('.add-item__view').html();
 
       this.width = '100%';
@@ -16,32 +17,32 @@ var PopupView = Backbone.View.extend({
         'height': this.height,
       });
     },
-  openPopup: function() {
+  openPopup() {
     var popup = $('.window');
 
     if (popup.hasClass('hidden')) {
       popup.removeClass('hidden');
-
-      var firstClick = true;
-      $(document).bind('click.myEvent', function(e) {
-        if (!firstClick && $(e.target).closest('.window').length === 0) {
-          popup.addClass('hidden');
-          $(document).unbind('click.myEvent');
-        }
-        firstClick = false;
-      });
     }
   },
-  closePopup: function() {
+  closePopupByNonWindowClick() {
+    var popup = $('.window');
+    var firstClick = true;
+    $(document).bind('click.myEvent', function(e) {
+      if (!firstClick && $(e.target).closest('.window').length === 0) {
+        popup.addClass('hidden');
+        $(document).unbind('click.myEvent');
+      }
+      firstClick = false;
+    });
+  },
+  closePopup() {
     $('.window').addClass('hidden');
     $(document).unbind('click.myEvent');
   },
-  sendPopupAttrs: function() {
+  sendPopupAttrs() {
     var id = $('.js_attrs').val();
     item.set('id', id);
     item.fetch();
-    console.log(item);
-    console.log(id);
     $('.window').addClass('hidden');
     $(document).unbind('click.myEvent');
   },
