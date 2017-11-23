@@ -3,8 +3,7 @@ var PopupView = Backbone.View.extend({
   events: {
     'click .add-item': 'openPopup',
     'click .modal__close': 'closePopup',
-    'click .js_submit_btn': 'sendPopupAttrs',
-    'click ': 'closePopupByNonWindowClick',
+    'click .js_submit_btn': 'getItemById',
   },
   initialize: function() {
     this.popup = this.$('.window');
@@ -17,18 +16,17 @@ var PopupView = Backbone.View.extend({
 
     var self = this;
     $(document).on('click', function(e) {
-      console.log(e);
       if ($(e.target).closest('.window').length === 0) {
         self.closePopup();
       }
     });
   },
   closePopup: function() {
-    $('.window').addClass('hidden');
+    this.$('.window').addClass('hidden');
     $(document).off('click');
   },
-  sendPopupAttrs: function() {
-    var id = $('.js_attrs').val();
+  getItemById: function(e) {
+    var id = this.$('.js_attrs').val();
     this.model.set('id', id);
     this.model.fetch();
     this.closePopup();
