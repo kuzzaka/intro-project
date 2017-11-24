@@ -1,13 +1,19 @@
 describe('Тесты', function() {
-  it('Существование model', function() {
-    var item = new Item();
+  var item,
+      view;
+  beforeEach(function() {
+    item = new Item();
+    view = new PopupView({
+        model: item,
+      });
+  });
+  it('Existence of model', function() {
     expect(item.url()).toBeDefined();
     var id = 1234;
     item.set('id', id);
     expect(item.url()).toEqual('https://www.sima-land.ru/api/v3/item/1234/');
-    console.log(item.url());
   });
-  it('Существование view методов', function() {
+  it('existing methods of View', function() {
     var view = new PopupView({
       model: item,
     });
