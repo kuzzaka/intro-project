@@ -4,17 +4,28 @@ module.exports = function(grunt) {
   grunt.initConfig({
     concat: {
       js: {
-        src: ['node_modules/lodash/lodash.js',
-              'node_modules/jquery/dist/jquery.js',
-              'node_modules/backbone/backbone.js',
-              'src/js/*.js'],
-        dest: 'build/js/full.js',
+        files: {
+          'build/js/full.js': ['node_modules/lodash/lodash.js',
+            'node_modules/jquery/dist/jquery.js',
+            'node_modules/backbone/backbone.js',
+            'src/js/application/*.js',
+            'src/js/components/*.js',
+          ],
+          'lib/full.js': ['src/js/components/*.js'],
+        },
       },
     },
     watch: {
+      scripts: {
+        files: ['lib/*.js', 'spec/*.spec.js'],
+        tasks: ['jasmine'],
+        options: {
+          livereload: true,
+        },
+      },
       js: {
         tasks: ['concat'],
-        files: ['src/js/*.js'],
+        files: ['src/js/components/*.js', 'src/js/application/*.js'],
       },
       scss: {
         tasks: ['concat'],
@@ -28,12 +39,29 @@ module.exports = function(grunt) {
         },
       },
     },
+    jasmine: {
+      test: {
+        src: 'lib/*.js',
+        options: {
+          vendor: [
+            'node_modules/jquery/dist/jquery.js',
+            'node_modules/lodash/lodash.js',
+            'node_modules/backbone/backbone.js',
+            'node_modules/jasmine-jquery/lib/jasmine-jquery.js',
+          ],
+          specs: 'spec/*.spec.js',
+          template: 'spec/popup-view.tmpl',
+        },
+      },
+    },
   });
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-newer');
+  grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.registerTask('default', ['newer:concat:js',
-  'newer:sass:dist',
-  'watch']);
+    'newer:sass:dist',
+    'watch', 'jasmine:build',
+  ]);
 };
