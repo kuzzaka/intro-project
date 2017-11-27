@@ -1,3 +1,4 @@
+
 var PopupView = Backbone.View.extend({
   el: $('.add-item__view'),
   events: {
@@ -7,6 +8,10 @@ var PopupView = Backbone.View.extend({
   },
   initialize: function() {
     this.popup = this.$('.window');
+    this.productView = new ProductView({
+      model: this.model,
+      el: $('.product')
+    });
   },
   openPopup: function(e) {
     e.stopPropagation();
@@ -25,7 +30,7 @@ var PopupView = Backbone.View.extend({
     this.$('.window').addClass('hidden');
     $(document).off('click');
   },
-  getItemById: function(e) {
+  getItemById: function() {
     var id = this.$('.js_attrs').val();
     this.model.set('id', id);
     this.model.fetch();
