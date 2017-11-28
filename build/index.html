@@ -22,7 +22,7 @@
         <div class="modal__content">
           <h2 class="modal__name">Добавление товара в корзину по артикулу</h2>
           <p>Введите артикулы через пробел или с новой строки, например: 123456, 123456, 123456</p>
-          <textarea class="modal__comment js_attrs" name="comment" wrap="soft"></textarea>
+          <textarea class="modal__comment js_attrs" name="comment" wrap="soft">991425</textarea>
           <p class="modal__note">Не более 1000 артикулов за раз</p>
           <button class="btn btn_red js_submit_btn" type="submit">
             Добавить
@@ -30,10 +30,12 @@
         </div>
       </div>
     </div>
+    <div class="product"></div>
   </div>
-  <div class="product">
+
+  <script type="text/template" id="product-template">
     <div class="product__name">
-      Лента для декора и подарков атласная, янтарный, 2.5 см х 35 м
+      <%= name %>
     </div>
     <div class="product__wrapper">
       <div class="product__photo">
@@ -67,52 +69,52 @@
           <ul class="product__features_section">
             <li>
               <span class="product__features_property"><span>Торговая марка</span></span>
-               <span class="product__features_value">Flo-art</span>
-             </li>
+              <span class="product__features_value">Flo-art</span>
+            </li>
             <li>
               <span class="product__features_property"><span>Артикул</span></span>
-               <span class="product__features_value">1260033</span>
-             </li>
+              <span class="product__features_value">1260033</span>
+            </li>
             <li>
               <span class="product__features_property"><span>Сертификат</span></span>
-               <span class="product__features_value">Не подлежит сертификации</span>
-             </li>
+              <span class="product__features_value">Не подлежит сертификации</span>
+            </li>
             <li>
               <span class="product__features_property"><span>Страна</span></span>
-               <span class="product__features_value">Польша</span>
-             </li>
+              <span class="product__features_value">Польша</span>
+            </li>
             <li>
               <span class="product__features_property"><span>Состав</span></span>
-               <span class="product__features_value">Текстиль</span>
-             </li>
+              <span class="product__features_value">Текстиль</span>
+            </li>
             <li>
               <span class="product__features_property"><span>Серия</span></span>
-               <span class="product__features_value">Лента "Атласная" однотонная</span>
-             </li>
+              <span class="product__features_value">Лента "Атласная" однотонная</span>
+            </li>
           </ul>
           <p class="product__features_section-name">Упаковка и фасовка</p>
           <ul class="product__features_section">
             <li>
               <span class="product__features_property"><span>В боксе</span></span>
-               <span class="product__features_value">100 шт</span>
-             </li>
+              <span class="product__features_value">100 шт</span>
+            </li>
             <li>
               <span class="product__features_property"><span>Фасовка</span></span>
-               <span class="product__features_value">по 10 шт</span>
-             </li>
+              <span class="product__features_value">по 10 шт</span>
+            </li>
             <li>
               <span class="product__features_property"><span>Индивидуальная упаковка</span></span>
-               <span class="product__features_value">Без упаковки</span>
-             </li>
+              <span class="product__features_value">Без упаковки</span>
+            </li>
             <li>
               <span class="product__features_property"><span>Размер упаковки</span></span>
-               <span class="product__features_value">9,5 см × 9,5 см × 2,5 см</span>
-             </li>
+              <span class="product__features_value">9,5 см × 9,5 см × 2,5 см</span>
+            </li>
           </ul>
         </div>
       </div>
     </div>
-  </div>
+  </script>
 </body>
 <script src="js/full.js"></script>
 

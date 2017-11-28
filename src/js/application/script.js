@@ -3,3 +3,8 @@ var view = new PopupView({
   model: item,
   el: $('.add-item__view'),
 });
+
+var productView = new ProductView({
+  model: item,
+  el: $('.product'),
+});
