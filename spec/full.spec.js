@@ -52,11 +52,27 @@ describe('Tests', function() {
   });
   it('shows correct name', function() {
     view.productView.template = _.template(
-      '<div class="product__name"><%= name %></div>');
+    '<div class="product__name"><%= model.name %></div>');
     item.set('name', 'Лента для декора и подарков' +
     ' атласная, янтарный, 2.5 см х 35 м');
     item.trigger('sync');
     var getName = $('.product__name').text();
     expect(item.get('name')).toEqual(getName);
+  });
+  it('shows correct property', function() {
+    view.productView.template = _.template(
+    '<span class="item-price"><%= model.price %></span>');
+    item.set('price', '152.9');
+    item.trigger('sync');
+    var getName = $('.item-price').text();
+    expect(item.get('price')).toEqual(getName);
+  });
+  it('shows correct img', function() {
+    view.productView.template = _.template(
+    '<img class="product__img" src="<%= model.photos[0].url_part %>700.jpg" alt="">');
+    item.set('photos', 'https://cdn.sky.sima-land.ru/items/991425/0/700.jpg');
+    item.trigger('sync');
+    var getName = $('product__img').attr('src');
+    expect(item.get('img')).toEqual(getName);
   });
 });

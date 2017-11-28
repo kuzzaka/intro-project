@@ -6,7 +6,7 @@ var ProductView = Backbone.View.extend({
   template: _.template($('#product-template').html()),
   render: function() {
     this.$el.html(this.template({
-      name: this.model.get('name'),
+      model: this.model.toJSON(),
     }));
     return this;
   },
