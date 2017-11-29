@@ -8,3 +8,7 @@ var productView = new ProductView({
   model: item,
   el: $('.product'),
 });
+var tabsView = new TabsView({
+  model: item,
+  el: $('.product__menu'),
+});
