@@ -134,11 +134,6 @@ $modal__bg_color: #f5f5ed;
   margin: auto;
 }
 
-.product__img {
-  width: 100%;
-  height: auto;
-}
-
 .product__info {
   margin: 15px;
   float: right;
@@ -179,8 +174,6 @@ $modal__bg_color: #f5f5ed;
 
 .product__menu {
   display: inline-block;
-  font: 700 "Open Sans";
-  line-height: 1.2;
   text-transform: uppercase;
   margin-right: 1em;
   white-space: nowrap;
@@ -206,6 +199,8 @@ $modal__bg_color: #f5f5ed;
 
 .product__menu__list > li > a {
   text-decoration: none;
+  font-weight: 700;
+  line-height: 1.2;
   color: #1f84db;
   border-bottom: 1px dashed rgba(31,132,219,.3);
 }
@@ -231,7 +226,8 @@ $modal__bg_color: #f5f5ed;
 }
 
 .tabs_content {
-  width: 500px;
+  max-width: 730px;
+  min-width: 500px;
   height: 100%;
 }
 
@@ -292,14 +288,40 @@ $modal__bg_color: #f5f5ed;
   margin-right: 10px;
 }
 
-.stars > label {
+.review__mark_stars > label {
+  background-image: url("../images/spritesheet.png");
+  background-position: -381px -608px;
   width: 16px;
-  height: 15px;
+  height: 16px;
   float: right;
   cursor: pointer;
   margin-right: 8px;
   position: relative;
   z-index: 1;
+}
+
+.review__mark_stars > input:hover~label {
+  background-image: url("../images/spritesheet.png");
+  background-position: -398px -608px;
+  width: 16px;
+  height: 16px;
+}
+
+.review__mark_stars > input:checked~label {
+  background-image: url("../images/spritesheet.png");
+  background-position: -466px -608px;
+  width: 16px;
+  height: 16px;
+}
+
+.review__mark_stars > input {
+  opacity: 0;
+  width: 16px;
+  height: 15px;
+  position: absolute;
+  top: -1px;
+  z-index: 0;
+  line-height: 1;
 }
 
 .textarea {
@@ -328,23 +350,92 @@ $modal__bg_color: #f5f5ed;
 .posted__review {
   max-width: 100%;
   padding: 16px 18px 30px;
+  margin: 1.5em 0;
   position: relative;
   color: #000;
   font-size: 13px;
 }
+
 .posted__review_bottom {
+  margin-top: 1.5em;
+  color: rgba(0,0,0,.4);
   width: 100%;
 }
+
 .posted__review_bottom,
 .posted__review_date,
 .posted__review_thumbs {
   display: inline-block;
 }
-.posted__review_date{
-  width: 330px;
-  text-align: left;
-}
+
+.posted__review_date {}
+
 .posted__review_thumbs {
-  width: 130px;
-  text-align: right;
+  float: right;
+}
+
+.posted__review_comment {
+  font-size: 14px;
+}
+
+.thumbs_up {
+  color: #66cb2f;
+}
+
+.thumbs_counter {
+  display: inline-block;
+  padding: 0 2px 0 12px;
+}
+
+.thumb {
+  position: relative;
+  font-weight: 500;
+}
+
+.thumb label {
+  width: 16px;
+  height: 15px;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.thumb input {
+  opacity: 0;
+  z-index: 0;
+  width: 16px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.thumbs_up label {
+  background-image: url("../images/spritesheet.png");
+  background-position: -558px -578px;
+  width: 16px;
+  height: 15px;
+}
+
+.thumbs_down label {
+  background-image: url("../images/spritesheet.png");
+  background-position: -449px -608px;
+  width: 16px;
+  height: 15px;
+}
+label {
+    display: inline-block;
+}
+
+.thumbs_up label:focus:not(.thumb_disabled), .thumbs_up label:hover:not(.thumb_disabled) {
+    background-image: url('../images/spritesheet.png');
+    background-position: -415px -608px;
+    width: 16px;
+    height: 15px;
+}
+.thumbs_down label:checked:not(.thumb_disabled), .thumbs_down label:hover:not(.thumb_disabled) {
+    background-image: url('../images/spritesheet.png');
+    background-position: -364px -608px;
+    width: 16px;
+    height: 15px;
 }
