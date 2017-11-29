@@ -39,8 +39,8 @@
   <% with (scripts) { %>
     <% [].concat(polyfills, jasmine, boot, vendor, helpers, src, specs,reporters).forEach(function(script){ %>
       <script src="<%= script %>"></script>
-      <% }) %>
-        <% }; %>
+    <% }) %>
+  <% }; %>
 
 </body>
 
