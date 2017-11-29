@@ -48,72 +48,143 @@
           <span class="item-total"> = 0 <sup>00</sup> Р</span>
           <button class="btn add-to-cart" type="button">В корзину</button>
         </div>
-        <div class="product__menu">
+        <div id="tabs" class="product__menu">
           <ul class="product__menu__list">
             <li>
-              <a href="#"> Характеристики</a>
+              <a href="#content1"> Характеристики</a>
             </li>
             <li>
-              <a href="#"> Описание</a>
+              <a href="#content2"> Описание</a>
             </li>
             <li>
-              <a href="#"> Задать вопрос</a>
+              <a href="#content3"> Задать вопрос</a>
             </li>
             <li>
-              <a href="#"> Оставить отзыв</a>
+              <a href="#content4"> Оставить отзыв</a>
             </li>
           </ul>
         </div>
-        <div class="product__features">
-          <p class="product__features_section-name">Общие</p>
-          <ul class="product__features_section">
-            <li>
-              <span class="product__features_property"><span>Торговая марка</span></span>
-              <span class="product__features_value"><%= model.trademark.name %></span>
-            </li>
-            <li>
-              <span class="product__features_property"><span>Артикул</span></span>
-              <span class="product__features_value"><%= model.sid %></span>
-            </li>
-            <li>
-              <span class="product__features_property"><span>Сертификат</span></span>
-              <span class="product__features_value"><%= model.certificate_type_id %></span>
-            </li>
-            <li>
-              <span class="product__features_property"><span>Страна</span></span>
-              <span class="product__features_value"><%= model.country.name %></span>
-            </li>
-            <li>
-              <span class="product__features_property"><span>Состав</span></span>
-              <span class="product__features_value"><%= model.stuff %></span>
-            </li>
-            <li>
-              <span class="product__features_property"><span>Серия</span></span>
-              <span class="product__features_value"><%= model.series.name %></span>
-            </li>
-          </ul>
-          <p class="product__features_section-name">Упаковка и фасовка</p>
-          <ul class="product__features_section">
-            <li>
-              <span class="product__features_property"><span>В боксе</span></span>
-              <span class="product__features_value"><%= model.in_box %> <%= model.pluralNameFormat %></span>
-            </li>
-            <li>
-              <span class="product__features_property"><span>Фасовка</span></span>
-              <span class="product__features_value"><%= model.per_package %> <%= model.pluralNameFormat %></span>
-            </li>
-            <li>
-              <span class="product__features_property"><span>Индивидуальная упаковка</span></span>
-              <span class="<product__features_valu></product__features_valu>e"><%= model.keep_package %></span>
-            </li>
-            <li>
-              <span class="product__features_property"><span>Размер упаковки</span></span>
-              <span class="product__features_value"><%= model.box_width %> см × <%= model.box_depth %> см × <%= model.box_height %> см</span>
-            </li>
-          </ul>
+        <div class="tabs_content">
+          <div class="product__features" id="content1">
+            <p class="product__features_section-name">Общие</p>
+            <ul class="product__features_section">
+              <li>
+                <span class="product__features_property"><span>Торговая марка</span></span>
+                <span class="product__features_value"><%= model.trademark.name %></span>
+              </li>
+              <li>
+                <span class="product__features_property"><span>Артикул</span></span>
+                <span class="product__features_value"><%= model.sid %></span>
+              </li>
+              <li>
+                <span class="product__features_property"><span>Сертификат</span></span>
+                <span class="product__features_value"><%= model.certificate_type_id %></span>
+              </li>
+              <li>
+                <span class="product__features_property"><span>Страна</span></span>
+                <span class="product__features_value"><%= model.country.name %></span>
+              </li>
+              <li>
+                <span class="product__features_property"><span>Состав</span></span>
+                <span class="product__features_value"><%= model.stuff %></span>
+              </li>
+              <li>
+                <span class="product__features_property"><span>Серия</span></span>
+                <span class="product__features_value"><%= model.series.name %></span>
+              </li>
+            </ul>
+            <p class="product__features_section-name">Упаковка и фасовка</p>
+            <ul class="product__features_section">
+              <li>
+                <span class="product__features_property"><span>В боксе</span></span>
+                <span class="product__features_value"><%= model.in_box %> <%= model.pluralNameFormat %></span>
+              </li>
+              <li>
+                <span class="product__features_property"><span>Фасовка</span></span>
+                <span class="product__features_value"><%= model.per_package %> <%= model.pluralNameFormat %></span>
+              </li>
+              <li>
+                <span class="product__features_property"><span>Индивидуальная упаковка</span></span>
+                <span class="<product__features_valu></product__features_valu>e"><%= model.keep_package %></span>
+              </li>
+              <li>
+                <span class="product__features_property"><span>Размер упаковки</span></span>
+                <span class="product__features_value"><%= model.box_width %> см × <%= model.box_depth %> см × <%= model.box_height %> см</span>
+              </li>
+            </ul>
+          </div>
+          <div class=""></div>
+          <div class=""></div>
+          <div class="product__comment" id="content4">
+            <div class="reviews__container">
+              <div class="no__reviews short">Отзывов пока нет — напишите первый.</div>
+              <div class="reviews__block">
+                <form action="" class="reviews__form">
+                  <span class="leaveReview">Оставить отзыв</span>
+                  <div class="review__markNpublish">
+                    <div class="review__mark">
+                      <div class="review__mark_header">Ваша оценка</div>
+                      <div class="review__mark_stars">
+                        <div class="stars">
+                          <input id="star-5" class="star" type="radio" name="commentStars" data-rating-id="5">
+                          <input id="star-4" class="star" type="radio" name="commentStars" data-rating-id="4">
+                          <input id="star-3" class="star" type="radio" name="commentStars" data-rating-id="3">
+                          <input id="star-2" class="star" type="radio" name="commentStars" data-rating-id="2">
+                          <input id="star-1" class="star" type="radio" name="commentStars" data-rating-id="1">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="review__publish">
+                      <div class="review__publish_header">Публиковать</div>
+                      <div class="review__publish_who">
+                        <div class="input-wrapper">
+                          <input id="public_my_name" name="comment__who" type="radio" checked="">
+                          <label for="public_my_name">От моего имени</label>
+                          <input id="public_anon" name="comment__who" type="radio" checked="">
+                          <label for="public_anon">Анонимно</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="comment-block">
+                    <label for="comment">Комментарий</label>
+                    <textarea id="reviews-comment" class="textarea reviews-comment" placeholder="Расскажите о своём опыте использования товара. Оцените его качество, удобство и соответствие характеристик."></textarea>
+                    <span class="modal__note">Все отзывы проходят модерацию согласно правилам</span>
+                  </div>
+                  <div class="btns">
+                    <button class="btn btn_red js_submit_comment_btn" type="submit">Отмена</button>
+                    <button class="btn btn_red js_submit_comment_btn" type="submit">Отправить</button>
+                  </div>
+                </form>
+                <div class="posted__review">
+                  <div class="posted__review_stars"></div>
+                  <div class="posted__review_comment">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores provident, iusto sed? Sint officiis vero laborum ab voluptatum eius beatae repellendus! Rem in aspernatur dicta unde, molestiae hic maxime neque.
+                  </div>
+                  <div class="posted__review_bottom">
+                    <div class="posted__review_date">Елена михайловна Кузнецова, 13 октября</div>
+                    <div class="posted__review_thumbs">Отзыв полезен? 0/0 </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <script>
+      $('#tabs>ul>li>a').on('click', function() {
+        $('#tabs>ul>li>a').removeClass('current');
+        $(this).addClass('current');
+
+        $('.tabs_content>div').hide();
+        tContent = $(this).attr('href');
+        $(tContent).show();
+
+        return false;
+      });
+      $('#tabs>ul>li>a:first').trigger('click');
+    </script>
   </script>
 </body>
 <script src="js/full.js"></script>
