@@ -1,0 +1,31 @@
+@mixin transparent_star {
+  background-position: -381px -608px;
+}
+@mixin gray_star {
+  background-position: -398px -608px;
+}
+@mixin gold_star {
+  background-position: -466px -608px;
+}
+@mixin thumb_up {
+  background-position: -558px -578px;
+}
+@mixin thumb_down {
+  background-position: -449px -608px;
+}
+@mixin thumb_up_hover {
+  background-position: -415px -608px;
+}
+@mixin thumb_down_hover {
+  background-position: -364px -608px;
+}
+@mixin label_size {
+  width: 16px;
+  height: 15px;
+}
+@mixin reviews_bg {
+  position: relative;
+  background: #f6f5ed;
+  color: #000;
+  border-radius: 4px;
+}

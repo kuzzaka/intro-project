@@ -1,20 +1,23 @@
 var TabsView = Backbone.View.extend({
-  events: {
-    'click .content_link': 'changeTab',
-  },
+  events: {},
+  el: $('.content_link'),
+  tag: $('a'),
+  id: $('#tabs'),
   initialize: function() {
-    console.log('hello');
-    this.tab = this.$('.content_link');
-    $('#tabs>.product__menu__list>.content_li>this.tab:first').trigger('click');
+    this.listenTo(productView.model, 'sync', this.changeTab);
   },
   changeTab: function() {
-    $('#tabs>.product__menu__list>.content_li>this.tab').removeClass('current');
-    $(this.tab).addClass('current');
+    var self = this;
+    this.$('.content_link').on('click', function() {
+      self.$('.content_link').removeClass('current');
+      self.$(this).addClass('current');
 
-    $('.tabs_content>div').hide();
-    tContent = $(this).attr('href');
-    $(tContent).show();
+      self.$('.tabs_content>div').hide();
+      var tContent = $(this).attr('href');
+      self.$(tContent).show();
 
-    return false;
+      return false;
+    });
+    self.$('.content_link:first').trigger('click');
   },
 });

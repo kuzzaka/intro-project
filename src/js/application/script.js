@@ -10,5 +10,5 @@ var productView = new ProductView({
 });
 var tabsView = new TabsView({
   model: item,
-  el: $('.product__menu'),
+  el: $('.product'),
 });
