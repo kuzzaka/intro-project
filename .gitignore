@@ -2,4 +2,5 @@
 /build/js
 /build/css
 /lib
+/src/css/compiled
 .eslintrc.js

@@ -1,23 +1,26 @@
 @mixin transparent_star {
-  background-position: -381px -608px;
+  background-position: -124px -10px;
 }
 @mixin gray_star {
-  background-position: -398px -608px;
+  background-position: -141px -10px;
 }
 @mixin gold_star {
-  background-position: -466px -608px;
+  background-position: -208px -10px;
+}
+@mixin big_gold_star {
+  background-position: -82px -6px;
 }
 @mixin thumb_up {
-  background-position: -558px -578px;
+  background-position: -226px -9px;
 }
 @mixin thumb_down {
-  background-position: -449px -608px;
+  background-position: -192px -9px;;
 }
 @mixin thumb_up_hover {
-  background-position: -415px -608px;
+  background-position: -158px -10px;
 }
 @mixin thumb_down_hover {
-  background-position: -364px -608px;
+  background-position: -107px -9px;;
 }
 @mixin label_size {
   width: 16px;
