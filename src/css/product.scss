@@ -1,0 +1,146 @@
+.product {
+  position: relative;
+  display: block;
+  width: 100%;
+  line-height: 1.5;
+  padding-bottom: 6em;
+  min-width: 995px;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product__name {
+  display: inline;
+  font-size: 200%;
+  margin: 0.3em 0 0;
+  padding: 0;
+  line-height: 1.1;
+  font-family: "Open Sans",Arial,sans-serif;
+  font-weight: 700;
+  color: #002b41;
+}
+
+.product__wrapper {
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.product__photo {
+  width: 50%;
+  max-width: 700px;
+  float: left;
+  position: relative;
+  margin: auto;
+}
+
+.product__info {
+  margin: 15px;
+  float: right;
+  position: relative;
+}
+
+.product__price {
+  position: relative;
+  padding: 1em 0.2em 1em 1em;
+  margin-right: 15px;
+  width: 0;
+  min-width: 425px;
+  background: #edf7ee;
+  border-radius: 3px;
+  font: 150%/1.2 "Open Sans";
+  color: #000;
+}
+
+.product__menu {
+  display: inline-block;
+  text-transform: uppercase;
+  margin-right: 1em;
+  white-space: nowrap;
+
+  .product__menu__list {
+    padding-left: 0;
+    .content_li {
+      display: inline-block;
+      padding-left: 0;
+      margin-right: 15px;
+      .content_link {
+        text-decoration: none;
+        font-weight: 700;
+        line-height: 1.2;
+        color: #1f84db;
+        border-bottom: 1px dashed rgba(31,132,219,.3);
+      }
+    }
+  }
+}
+
+.product__features_section {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.product__features_property {
+  display: inline-block;
+  width: 40%;
+  min-width: 210px;
+  padding: 0 10px 0 0;
+  background: url("../images/dot.gif") repeat-x 100% 1.2em;
+  .property_span {
+    background: #fff;
+  }
+}
+
+.product__features_value {
+  display: inline-block;
+  min-width: 130px;
+  width: 55%;
+  white-space: normal;
+  vertical-align: top;
+}
+
+.add-to-cart {
+  color: #fff;
+  background: #1f84db;
+  margin-left: 2.5em;
+}
+
+.item-amount {
+  background: #fff;
+  border: 1px solid #c5c5bc;
+  box-shadow: inset 0 1px 2px rgba(152,152,170,.6);
+  border-radius: 4px;
+}
+
+.item-amount,
+.item-price,
+.item-total {
+  font-size: 13px;
+  margin-left: 1em;
+}
+
+// tabs
+
+.tabs_content {
+  max-width: 730px;
+  min-width: 500px;
+  height: 100%;
+}
+
+.tabs_content > div {
+  display: none;
+}
+
+#tabs > ul > li > a.current {
+  text-decoration: none;
+  color: #000;
+  border-bottom: none;
+}
+
+.short {
+  display: inline-block;
+  margin-top: 0;
+  width: auto;
+}

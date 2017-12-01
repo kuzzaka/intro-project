@@ -10,7 +10,7 @@ var PopupView = Backbone.View.extend({
     this.popup = this.$('.window');
     this.productView = new ProductView({
       model: this.model,
-      el: $('.product')
+      el: $('.product'),
     });
   },
   openPopup: function(e) {

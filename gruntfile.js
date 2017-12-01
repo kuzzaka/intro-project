@@ -13,6 +13,11 @@ module.exports = function(grunt) {
             'lib/full.js': ['src/js/components/*.js'],
         },
       },
+      scss: {
+        files: {
+          'src/css/compiled/full.scss': ['src/css/*.scss'],
+        },
+      },
     },
     watch: {
       scripts: {
@@ -34,7 +39,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         files: {
-          'build/css/styles.css': ['src/css/*.scss'],
+          'build/css/styles.css': ['src/css/compiled/full.scss'],
         },
       },
     },

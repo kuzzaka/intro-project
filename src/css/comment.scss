@@ -1,0 +1,224 @@
+.no__reviews {
+  position: relative;
+  padding: 1em;
+  @include reviews_bg;
+}
+
+.reviews__block {
+  position: relative;
+  margin: 18px 0 42px;
+  font-size: 13px;
+}
+
+.reviews__form {
+  max-width: 100%;
+  font-size: 13px;
+  padding: 16px 18px 30px;
+  @include reviews_bg;
+}
+
+.leaveReview {
+  font-size: 22px;
+}
+
+.review__mark_and_publish {
+  display: inline-block;
+  width: 100%;
+}
+
+.review__mark,
+.review__publish {
+  float: left;
+  width: 50%;
+}
+
+.review__mark_stars {
+overflow: hidden;
+position: relative;
+display: inline-block;
+margin-right: 10px;  label {
+    background-image: $spritesheet;
+    @include transparent_star;
+    @include label_size;
+    float: right;
+    cursor: pointer;
+    margin-right: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .star:hover~label {
+    background-image: $spritesheet;
+    @include gray_star;
+    @include label_size;
+  }
+  .star:checked~label {
+    background-image: $spritesheet;
+    @include gold_star;
+    @include label_size;
+  }
+  .star {
+    opacity: 0;
+    @include label_size;
+    position: absolute;
+    top: -1px;
+    z-index: 0;
+    line-height: 1;
+  }
+}
+
+
+
+.textarea {
+  width: 100%;
+}
+
+.reviews-comment {
+  font-style: italic;
+  line-height: 1.4;
+  margin: 7px 0 2px;
+  height: 100%;
+  min-height: 100px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  resize: none;
+}
+
+.btns {
+  margin: 0.6em 0 0;
+}
+
+.btns > .btn {
+  margin: 0.7em 0.7em 0 0;
+}
+
+.posted__review {
+  max-width: 100%;
+  padding: 16px 18px 30px;
+  margin: 1.5em 0;
+  position: relative;
+  color: #000;
+  font-size: 13px;
+}
+
+.posted__review_bottom {
+  margin-top: 1.5em;
+  color: rgba(0,0,0,.4);
+  width: 100%;
+}
+
+.posted__review_bottom,
+.posted__review_date,
+.posted__review_thumbs {
+  display: inline-block;
+}
+
+.posted__review_date {}
+
+.posted__review_thumbs {
+  float: right;
+}
+
+.posted__review_comment {
+  font-size: 14px;
+}
+
+.thumbs_up {
+  color: #66cb2f;
+}
+
+.thumbs_counter {
+  display: inline-block;
+  padding: 0 2px 0 12px;
+}
+
+.thumb {
+  position: relative;
+  font-weight: 500;
+}
+
+.thumb label {
+  @include label_size;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.thumb input {
+  opacity: 0;
+  z-index: 0;
+  @include label_size;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.thumbs_up label {
+  background-image: $spritesheet;
+  @include thumb_up @include label_size;
+}
+
+.thumbs_down label {
+  background-image: $spritesheet;
+  @include thumb_down @include label_size;
+}
+
+label {
+  display: inline-block;
+}
+
+.thumbs_up label:focus:not(.thumb_disabled),
+.thumbs_up label:hover:not(.thumb_disabled) {
+  background-image: $spritesheet;
+  @include thumb_up_hover;
+  @include label_size;
+}
+
+.thumbs_down label:checked:not(.thumb_disabled),
+.thumbs_down label:hover:not(.thumb_disabled) {
+  background-image: $spritesheet;
+  @include thumb_down_hover;
+  @include label_size;
+}
+
+.stars-grade {
+  margin-bottom: 13px;
+}
+
+.stars-grade .star.big,
+.stars-grade .star.full {
+  background-image: $spritesheet;
+  @include gold_star;
+}
+
+.stars-grade .star.big {
+  margin: 0 6px -1px -2px;
+  background-image: $spritesheet;
+  @include big_gold_star;
+  width: 20px;
+  height: 19px;
+}
+
+.stars-grade .star {
+  @include label_size;
+  margin: 0 8px 0 0;
+  background-repeat: no-repeat;
+}
+
+.stars-grade .star.empty {
+  @include label_size;
+  margin: 0 8px 0 0;
+  @include transparent_star;
+  background-repeat: no-repeat;
+}
+
+.product-stars .star.big,
+.product-stars .star.full,
+.stars-grade .star.empty {
+  background-image: $spritesheet;
+  width: 16px;
+  height: 15px;
+}
+
+.stars-grade .star {
+  display: inline-block;
+}
