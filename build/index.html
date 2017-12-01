@@ -22,7 +22,7 @@
         <div class="modal__content">
           <h2 class="modal__name">Добавление товара в корзину по артикулу</h2>
           <p>Введите артикулы через пробел или с новой строки, например: 123456, 123456, 123456</p>
-          <textarea class="modal__comment js_attrs" name="comment" wrap="soft">991425</textarea>
+          <textarea class="modal__comment js_attrs" name="comment" wrap="soft">1025229</textarea>
           <p class="modal__note">Не более 1000 артикулов за раз</p>
           <button class="btn btn_red js_submit_btn" type="submit">
             Добавить
@@ -70,52 +70,50 @@
               <p class="product__features_section-name">Общие</p>
               <ul class="product__features_section">
                 <li>
-                  <span class="product__features_property"><span>Торговая марка</span></span>
+                  <span class="product__features_property"><span class="property_span">Торговая марка</span></span>
                   <span class="product__features_value"><%= model.trademark.name %></span>
                 </li>
                 <li>
-                  <span class="product__features_property"><span>Артикул</span></span>
+                  <span class="product__features_property"><span class="property_span">Артикул</span></span>
                   <span class="product__features_value"><%= model.sid %></span>
                 </li>
                 <li>
-                  <span class="product__features_property"><span>Сертификат</span></span>
+                  <span class="product__features_property"><span class="property_span">Сертификат</span></span>
                   <span class="product__features_value"><%= model.certificate_type_id %></span>
                 </li>
                 <li>
-                  <span class="product__features_property"><span>Страна</span></span>
+                  <span class="product__features_property"><span class="property_span">Страна</span></span>
                   <span class="product__features_value"><%= model.country.name %></span>
                 </li>
                 <li>
-                  <span class="product__features_property"><span>Состав</span></span>
+                  <span class="product__features_property"><span class="property_span">Состав</span></span>
                   <span class="product__features_value"><%= model.stuff %></span>
                 </li>
                 <li>
-                  <span class="product__features_property"><span>Серия</span></span>
+                  <span class="product__features_property"><span class="property_span">Серия</span></span>
                   <span class="product__features_value"><%= model.series.name %></span>
                 </li>
               </ul>
               <p class="product__features_section-name">Упаковка и фасовка</p>
               <ul class="product__features_section">
                 <li>
-                  <span class="product__features_property"><span>В боксе</span></span>
+                  <span class="product__features_property"><span class="property_span">В боксе</span></span>
                   <span class="product__features_value"><%= model.in_box %> <%= model.pluralNameFormat %></span>
                 </li>
                 <li>
-                  <span class="product__features_property"><span>Фасовка</span></span>
+                  <span class="product__features_property"><span class="property_span">Фасовка</span></span>
                   <span class="product__features_value"><%= model.per_package %> <%= model.pluralNameFormat %></span>
                 </li>
                 <li>
-                  <span class="product__features_property"><span>Индивидуальная упаковка</span></span>
+                  <span class="product__features_property"><span class="property_span">Индивидуальная упаковка</span></span>
                   <span class="<product__features_valu></product__features_valu>e"><%= model.keep_package %></span>
                 </li>
                 <li>
-                  <span class="product__features_property"><span>Размер упаковки</span></span>
+                  <span class="product__features_property"><span class="property_span">Размер упаковки</span></span>
                   <span class="product__features_value"><%= model.box_width %> см × <%= model.box_depth %> см × <%= model.box_height %> см</span>
                 </li>
               </ul>
             </div>
-            <div class=""></div>
-            <div class=""></div>
             <div class="product__comment" id="content4">
               <div class="reviews__container">
                 <div class="no__reviews short">Отзывов пока нет — напишите первый.</div>
@@ -160,7 +158,7 @@
                       <button class="btn btn_red js_submit_comment_btn" type="submit">Отправить</button>
                     </div>
                   </form>
-                  <div class="posted__review">
+                  <div class="posted__review" id='posted_comment'>
                     <div class="stars stars-grade">
                       <span class="star full"></span>
                       <span class="star big"></span>
@@ -169,7 +167,7 @@
                       <span class="star empty"></span>
                     </div>
                     <div class="posted__review_comment">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores provident, iusto sed? Sint officiis vero laborum ab voluptatum eius beatae repellendus! Rem in aspernatur dicta unde, molestiae hic maxime neque.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus velit quibusdam laborum laudantium sed? Facilis eius aut veritatis eum soluta quas voluptatibus quos praesentium, et. Totam facere blanditiis, deserunt quis.
                     </div>
                     <div class="posted__review_bottom">
                       <span class="posted__review_date">Елена Михайловна Кузнецова, 13 октября</span>
