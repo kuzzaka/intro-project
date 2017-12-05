@@ -12,3 +12,10 @@ var tabsView = new TabsView({
   model: item,
   el: $('.product'),
 });
+
+var commentary = new Commentary();
+var commentaryCollection = new CommentaryCollection();
+var commentaryList = new CommentaryList({
+  model: commentary,
+  el: $('.product__comment'),
+});
