@@ -14,8 +14,11 @@ var tabsView = new TabsView({
 });
 
 var commentary = new Commentary();
-var commentaryCollection = new CommentaryCollection();
+var commentaryCollection = new CommentaryCollection({
+  model: item,
+  productView: ProductView,
+});
 var commentaryList = new CommentaryList({
-  model: commentary,
+  model: Commentary,
   el: $('.product__comment'),
 });

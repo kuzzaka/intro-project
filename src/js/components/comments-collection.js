@@ -1,9 +1,10 @@
 var CommentaryCollection = Backbone.Collection.extend({
   events: {},
-  model: Commentary,
-  url: 'https://www.sima-land.ru/api/v3/item-comment/?item_id=1025229',
   initialize: function() {
     this.listenTo(productView.model, 'sync', this.getComments);
+  },
+  url: function() {
+    return 'https://www.sima-land.ru/api/v3/item-comment/?item_id=' + item.get('id');
   },
   getComments: function() {
     this.fetch();

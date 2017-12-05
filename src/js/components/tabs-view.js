@@ -1,10 +1,12 @@
 var TabsView = Backbone.View.extend({
   events: {
     'click .content_link': 'changeTab',
-    'click .content_link__comments': 'initComments',
   },
-  initialize: function() {
-    this.listenTo(productView.model, 'sync', this.setTab);
+  initialize: function(options) {
+    if (options) {
+      _.extend(this, options);
+    }
+    this.listenTo(this.model, 'sync', this.setTab);
     this.commentaryCollection = new CommentaryCollection();
     this.сommentaryList = new CommentaryList({
       model: this.commentaryCollection,
@@ -28,7 +30,7 @@ var TabsView = Backbone.View.extend({
   template: _.template($('#review_template').html()),
   renderComments: function() {
     var self = this;
-    $.each(commentaryCollection.models, function() {
+    $.each(this.commentaryCollection.models, function() {
       self.$('.review_template').append(self.template({
         model: this.toJSON(),
       }));
