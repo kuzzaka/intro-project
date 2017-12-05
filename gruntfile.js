@@ -5,8 +5,8 @@ module.exports = function(grunt) {
     concat: {
       js: {
         files: {
-            'build/js/full.js': ['node_modules/jquery/dist/jquery.js',
-            'node_modules/lodash/lodash.js',
+            'build/js/full.js': ['node_modules/lodash/lodash.js',
+            'node_modules/jquery/dist/jquery.js',
             'node_modules/backbone/backbone.js',
             'src/js/components/*.js',
             'src/js/application/*.js'],
